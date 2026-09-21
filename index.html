@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escritorio Creativo — Cuaderno & Tableta</title>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="Photoshop.png">
+<link rel="preload" as="image" href="Iz.png">
+<link rel="preload" as="image" href="De.png">
+<link rel="preload" as="image" href="Pared.png">
+<link rel="preload" as="image" href="Tecnicas.png">
+<link rel="preload" as="image" href="PhotoDe.png">
+<link rel="preload" as="image" href="PhotoDra.png">
+<link rel="preload" as="image" href="Diferencia.png">
+<link rel="preload" as="image" href="Influencia.png">
+
+<script>
+window.tabletData = fetch('tablet.draco.glb').then(function(res){
+  if(!res.ok) throw new Error('HTTP ' + res.status);
+  return res.arrayBuffer();
+});
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loading">
+  <img id="loadImg1" src="Iz.png" alt="">
+  <img id="loadImg2" src="De.png" alt="">
+</div>
+
+<div id="canvas-holder"></div>
+
+<div id="techScreen">
+  <img id="techScreenImg" src="Tecnicas.png" alt="">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
+<script src="imagen.js"></script>
+<script src="cell.js"></script>
+<script src="galaxya.js"></script>
+<script src="grieg.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

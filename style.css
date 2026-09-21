@@ -1,0 +1,53 @@
+:root{
+    --bg-top:#eadfca;
+    --bg-bottom:#cdb99b;
+    --accent:#e8a33d;
+    --ink:#f3ece1;
+    --muted:#b9ad9c;
+  }
+  *{box-sizing:border-box;}
+  html,body,canvas,*{
+    cursor:none !important;
+  }
+  html,body{
+    margin:0; padding:0; width:100%; height:100%;
+    background: radial-gradient(ellipse at 50% 20%, var(--bg-top), var(--bg-bottom));
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    overflow:hidden;
+    color:var(--ink);
+  }
+  #canvas-holder{ position:fixed; inset:0; }
+  canvas{ display:block; touch-action:none; }
+
+  #loading{
+    position:fixed; inset:0; z-index:50;
+    background:transparent;
+    overflow:hidden;
+    transition:opacity 0.6s ease;
+  }
+  #loading img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform 1s cubic-bezier(0.65,0,0.35,1);
+  }
+  #loading.open #loadImg1{ transform:translateX(-100%); }
+  #loading.open #loadImg2{ transform:translateX(100%); }
+
+  #techScreen{
+    position:fixed; inset:0; z-index:60;
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none;
+    transition:opacity 0.8s ease;
+    overflow:hidden;
+    background:rgba(20,15,8,0.25);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+  }
+  #techScreen.show{ opacity:1; pointer-events:auto; }
+  #techScreenImg{
+    position:relative; z-index:2;
+    max-width:90%; max-height:85%;
+    object-fit:contain;
+  }
